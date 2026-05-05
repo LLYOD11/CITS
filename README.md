@@ -1,4 +1,4 @@
-# CITS — Collaborative Intelligence Ticketing System
+# CITS (Collaborative Intelligence Ticketing System)
 
 ## Overview
 CITS is an employee-first ticketing system designed to improve support team efficiency through automated context gathering, expertise-based routing, and proactive SLA risk detection.
