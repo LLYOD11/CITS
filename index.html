@@ -201,10 +201,10 @@ body { background: var(--bg); color: var(--text); font-family: 'Inter', -apple-s
 <div style="display: flex; flex-direction: column; gap: 0.5rem;">
 <input type="text" id="ticketTitle" class="input-field" placeholder="Ticket title...">
 <select id="ticketPriority" class="select-field">
-<option value="p3">P3 — Low (8h SLA)</option>
+<option value="p3">P3 — Low (48h SLA)</option>
 <option value="p2">P2 — Medium (4h SLA)</option>
 <option value="p1">P1 — High (1h SLA)</option>
-<option value="p0">P0 — Critical (30min SLA)</option>
+<option value="pX">PX — Critical (30min SLA)</option>
 </select>
 <select id="ticketCategory" class="select-field">
 <option value="General">Select category...</option>
@@ -228,7 +228,7 @@ body { background: var(--bg); color: var(--text); font-family: 'Inter', -apple-s
 </div>
 <script>
 
-const API_BASE = window.location.origin.includes('localhost') || window.location.origin.includes('127.0.0.1') ? 'http://localhost:8000' : window.location.origin;
+const API_BASE = window.location.origin.includes('localhost')
 let currentPage = 'dashboard';
 let clients = [];
 let team = [];
