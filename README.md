@@ -1,4 +1,4 @@
-# CITS (Collaborative Intelligence Ticketing System)
+# CITS (JXON)
 
 ## Overview
 CITS is an employee-first ticketing system designed to improve support team efficiency through automated context gathering, expertise-based routing, and proactive SLA risk detection.
