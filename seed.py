@@ -5,7 +5,7 @@ def seed_data():
     db = SessionLocal()
     if db.query(User).count() > 0: db.close(); return
     users = [
-        User(name="Sarah Chen", email="sarah@company.com", tier=Tier.T2, role="Senior SDM", avatar_initials="SC", efficiency_score=98.0,
+        User(name="Sarah Chen", email="sarah@company.com", tier=Tier.T2, role="Senior SDM", avatar_initials="SC", efficiency_score=96.0,
              skills=[{"name": "Database", "count": 47, "level": "expert"}, {"name": "Infrastructure", "count": 32, "level": "expert"}, {"name": "Cloud AWS", "count": 15, "level": "growing"}], current_load=3, status="busy"),
         User(name="Marcus Johnson", email="marcus@company.com", tier=Tier.T1, role="SDM", avatar_initials="MJ", efficiency_score=91.0,
              skills=[{"name": "API", "count": 38, "level": "expert"}, {"name": "Performance", "count": 29, "level": "expert"}, {"name": "Node.js", "count": 12, "level": "growing"}], current_load=5, status="busy"),
