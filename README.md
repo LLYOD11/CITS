@@ -1,11 +1,9 @@
 # CITS (JXON)
 
 ## Overview
-CITS is an employee-first ticketing system designed to improve support team efficiency through automated context gathering, expertise-based routing, and proactive SLA risk detection.
+CITS/JXON is a multi-tenant IT service management platform designed for high-velocity support teams. It combines intelligent ticket handling, tiered collaboration, real-time incident coordination, and a full customer portal.
 
 ## Key Features
-CITS is a modern, multi-tenant IT service management platform designed for high-velocity support teams. It combines intelligent ticket handling, tiered collaboration, real-time incident coordination, and a full customer portal — all in a clean, dark-themed SPA.
-Key Features
 Core Ticketing
 •  Multi-queue views (All, Open, Awaiting Info, On Hold, Pending, Resolved, Closed, Assigned to Me)
 •  Priority levels P1–P5 with visual indicators and SLA timers + breach-risk flags
