@@ -5,11 +5,11 @@ CITS/JXON is a multi-tenant IT service management platform designed for high-vel
 
 ## Key Features
 Core Ticketing
-•  Multi-queue views (All, Open, Awaiting Info, On Hold, Pending, Resolved, Closed, Assigned to Me)
-•  Priority levels P1–P5 with visual indicators and SLA timers + breach-risk flags
-•  Category filters (Infrastructure, Security, Application, Network, Database)
-•  Multi-select ticket banner with conversation history, internal notes, and status actions
-•  Linked INC / RITM references, tags, assets, and company context
+Multi-queue views (All, Open, Awaiting Info, On Hold, Pending, Resolved, Closed, Assigned to Me)
+Priority levels P1–P5 with visual indicators and SLA timers + breach-risk flags
+Category filters (Infrastructure, Security, Application, Network, Database)
+Multi-select ticket banner with conversation history, internal notes, and status actions
+Linked INC / RITM references, tags, assets, and company context
 Tiered Collaboration
 •  Role-based access: Customer Portal (external) vs Staff Workspace (internal)
 •  Support tiers:
