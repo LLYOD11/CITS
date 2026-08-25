@@ -74,21 +74,21 @@ def get_insights(db: Session = Depends(get_db)):
     overloaded = db.query(User).filter(User.current_load >= User.max_capacity).all()
     if overloaded:
         names = ", ".join([u.name for u in overloaded[:2]])
-        insights.append(InsightItem(icon="⚠️", title="Capacity Alert", description=f"{names} and others are at max capacity. Consider redistributing load.", type="warning"))
+        insights.append(InsightItem(icon="...", title="Capacity Alert", description=f"{names} and others are at max capacity. Consider redistributing load.", type="warning"))
     urgent_unassigned = db.query(Ticket).filter(Ticket.priority.in_([Priority.P0, Priority.P1]), Ticket.assignee_id == None, Ticket.status == TicketStatus.OPEN).count()
     if urgent_unassigned > 0:
-        insights.append(InsightItem(icon="🚨", title="Urgent Tickets Unassigned", description=f"{urgent_unassigned} P0/P1 tickets need immediate assignment.", type="warning"))
+        insights.append(InsightItem(icon="...", title="Urgent Tickets Unassigned", description=f"{urgent_unassigned} P0/P1 tickets need immediate assignment.", type="warning"))
     for user in db.query(User).all():
         skills = user.skills or []
         growing_skills = [s for s in skills if s.get("level") == "growing"]
         if growing_skills and user.current_load < 3:
-            insights.append(InsightItem(icon="📈", title="Growth Opportunity", description=f"{user.name} is growing in {growing_skills[0]['name']}. Assign matching tickets to level up.", type="success"))
+            insights.append(InsightItem(icon="...", title="Growth Opportunity", description=f"{user.name} is growing in {growing_skills[0]['name']}. Assign matching tickets to level up.", type="success"))
             break
     today = datetime.utcnow().replace(hour=0, minute=0, second=0, microsecond=0)
     auto_count = db.query(Ticket).filter(Ticket.auto_resolved == True, Ticket.resolved_at >= today).count()
     if auto_count > 0:
-        insights.append(InsightItem(icon="🤖", title="Automation Working", description=f"CITS auto-resolved {auto_count} tickets today, saving ~{auto_count * 15} minutes of manual work.", type="success"))
+        insights.append(InsightItem(icon="...", title="Automation Working", description=f"CITS auto-resolved {auto_count} tickets today, saving ~{auto_count * 15} minutes of manual work.", type="success"))
     vip_breached = db.query(Ticket).join(Client).filter(Client.tier.in_([ClientTier.VIP, ClientTier.ENTERPRISE]), Ticket.breached == True).count()
     if vip_breached == 0:
-        insights.append(InsightItem(icon="🛡️", title="VIP Shield Active", description="All VIP tickets within SLA. Smart routing is protecting high-value clients.", type="success"))
+        insights.append(InsightItem(icon="...", title="VIP Shield Active", description="All VIP tickets within SLA. Smart routing is protecting high-value clients.", type="success"))
     return insights
